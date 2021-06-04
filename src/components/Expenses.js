@@ -6,10 +6,13 @@ import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props){
     const expenses = props.expenses;
+    const onSelectYearHandler = (yearSelected) =>{
+        console.log(yearSelected);
+    }
     return(
         <Card className='expenses'>
-            <ExpensesFilter />
-            
+            <ExpensesFilter onSelectYear = {onSelectYearHandler}/>
+
             <ExpenseItem 
                 title={expenses[0].title}
                 amount={expenses[0].amount}
