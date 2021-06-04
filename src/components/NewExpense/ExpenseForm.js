@@ -2,12 +2,15 @@ import React from 'react';
 import './ExpenseForm.css'; // This CSS is added to CSSOM
 
 function ExpenseForm(){
+    const onTitleChangeHandler = (event) =>{
+        console.log(event.target.value);
+    }
     return(
         <form>
             <div className = 'new-expense__controls'>
                 <div className = 'new-expense__control'>
                     <label>Title</label>
-                    <input type='text' />
+                    <input type='text' onChange = {onTitleChangeHandler}/>
                 </div>
 
                 <div className = 'new-expense__control'>
