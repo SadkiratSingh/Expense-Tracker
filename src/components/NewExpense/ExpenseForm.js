@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './ExpenseForm.css'; // This CSS is added to CSSOM
 
-function ExpenseForm(){
+function ExpenseForm(props){
     const [enteredTitle,setEnteredTitle] = useState('');
     const [enteredDate,setEnteredDate] = useState('');
     const [enteredAmount,setEnteredAmount] = useState('');
@@ -22,7 +22,7 @@ function ExpenseForm(){
             amount:enteredAmount,
             date:new Date(enteredDate)
         }
-        console.log(expenseData);
+        props.onCreateExpense(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');

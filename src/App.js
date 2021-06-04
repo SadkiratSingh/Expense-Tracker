@@ -26,9 +26,13 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  function onAddExpenseHandler(expense){
+    console.log(expense);
+    console.log("In App.js");
+  }
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense = {onAddExpenseHandler}/>
       <Expenses expenses = {expenses} />
     </div>
   );
