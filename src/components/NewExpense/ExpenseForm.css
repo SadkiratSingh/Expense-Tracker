@@ -23,7 +23,7 @@
 .new-expense__actions {
     flex-grow:1;
     display:flex;
-    justify-content:flex-end;
+    justify-content:center;
 }
 
 .new-expense__actions button{
