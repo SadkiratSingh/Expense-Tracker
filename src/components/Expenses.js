@@ -10,12 +10,14 @@ function Expenses(props){
     const onSelectYearHandler = (yearSelected) =>{
         setYear(yearSelected);
     }
+    const filteredList = expenses.filter((expense) => expense.date.getFullYear() === parseInt(year));
     return(
         <Card className='expenses'>
             <ExpensesFilter selectedYear = {year} onSelectYear = {onSelectYearHandler}/>
             {
-                expenses.map(expense =>
+                filteredList.map(expense =>
                     <ExpenseItem 
+                        key={expense.id}
                         title={expense.title}
                         amount={expense.amount}
                         date={expense.date}
